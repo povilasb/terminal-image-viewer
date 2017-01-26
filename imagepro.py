@@ -77,7 +77,7 @@ def average_rgb(array):
 
 #Fill's the output array given an image in cropsizeXcropsize squares
 def fill_rgb_array(image,liste,crop_size):
-	image_size = image.size[0]*image.size[1]
+	image_size = crop_size*crop_size
 	i=0 
 	while(i<height):
 		j = (i+crop_size) if (i+crop_size)<height else height
