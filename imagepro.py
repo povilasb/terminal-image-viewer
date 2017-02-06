@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 @@Author: Deniz Rasim Ulug
 @@Version: 1.0
@@ -7,7 +7,7 @@
 
 from PIL import Image
 from math import ceil
-import color_table
+import colortable
 import sys
 
 crop_size=50
