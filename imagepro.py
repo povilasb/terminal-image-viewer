@@ -1,6 +1,6 @@
 #!/usr/bin/python
 """
-@@Author: Deniz Rasim Uluğ
+@@Author: Deniz Rasim Ulug
 @@Version: 1.0
 """
 
