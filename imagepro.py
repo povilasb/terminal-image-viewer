@@ -4,11 +4,13 @@
 @@Version: 1.0
 """
 
+import sys
+from math import ceil
 
 from PIL import Image
-from math import ceil
+
 import colortable
-import sys
+
 
 crop_size=50
 file_name="image.jpg"
@@ -19,6 +21,7 @@ if len(sys.argv)>2:
 	crop_size=int(sys.argv[2])
 
 im = Image.open(file_name)
+"""
 #Currently not used
 def reduce_array(liste,n,w,h):
 
@@ -45,7 +48,8 @@ def reduce_array(liste,n,w,h):
 		j+=1
 	#liste[-1][-1] = w*h
 	liste[-1][-1][:] = [x / (n*n) for x in liste[-1][-1]]
-
+"""
+"""
 #Currently not used
 def find_index(x,n):
 	retval=0
@@ -55,8 +59,9 @@ def find_index(x,n):
 			return retval
 		retval+=1
 		value+=n
+"""
 
-#return the average RGB of a region as a tuple
+#Return the average RGB of a region as a tuple
 def average_rgb(array):
 	n=0
 	retval=[0,0,0]
@@ -75,7 +80,7 @@ def average_rgb(array):
 	#print(tuple(retval))
 	return tuple(retval)
 
-#Fill's the output array given an image in cropsizeXcropsize squares
+#Fills the output array given an image, in cropsizeXcropsize squares
 def fill_rgb_array(image,liste,crop_size):
 	image_size = crop_size*crop_size
 	i=0 
@@ -96,7 +101,7 @@ def fill_rgb_array(image,liste,crop_size):
 
 def rgb2hex(rgb):  
 	hexx= '#%02x%02x%02x' % (rgb[0], rgb[1], rgb[2])  
-	return  int(color_table.rgb2short(hexx)[0])
+	return  int(colortable.rgb2short(hexx)[0])
 
 width, height = im.size
 
@@ -111,7 +116,7 @@ while(i<len(rgb_array)):
 	j=0
 	while(j<len(rgb_array[i])):
 		hexx = rgb2hex(rgb_array[i][j])
-		sys.stdout.write('\033[48;5;%sm ' % (hexx) + "\033[0m" )
+		sys.stdout.write('\033[48;5;%sm  ' % (hexx) + "\033[0m" )
 		j+=1
 	print("")
 	i+=1
