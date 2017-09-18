@@ -12,7 +12,7 @@ from PIL import Image
 import colortable
 
 
-crop_size=50
+crop_size = 1
 file_name="image.jpg"
 if len(sys.argv)>1:
     file_name = sys.argv[1]

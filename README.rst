@@ -16,7 +16,7 @@ Name the script as imagepro for convenience.
 
 Where image-name is the name of the image you want to open in current
 directory.  Crop size is the size of the squares the script partitions the
-image to print. If ommited default value is 50. Lower the crop size higher the
+image to print. If ommited default value is 1. Lower the crop size higher the
 details.
 
 Example::
