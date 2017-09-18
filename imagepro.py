@@ -69,11 +69,11 @@ def average_rgb(array):
 	while(i<len(array)):
 		#print(array[i])
 		n += array[i][0]
-		retval[0] += array[i][0] * array[i][1][0] 
-		retval[1] += array[i][0] * array[i][1][1] 
-		retval[2] += array[i][0] * array[i][1][2] 
+		retval[0] += array[i][0] * array[i][1][0]
+		retval[1] += array[i][0] * array[i][1][1]
+		retval[2] += array[i][0] * array[i][1][2]
 		i+=1
-	
+
 	retval[0]//=n
 	retval[1]//=n
 	retval[2]//=n
@@ -83,10 +83,10 @@ def average_rgb(array):
 #Fills the output array given an image, in cropsizeXcropsize squares
 def fill_rgb_array(image,liste,crop_size):
 	image_size = crop_size*crop_size
-	i=0 
+	i=0
 	while(i<height):
 		j = (i+crop_size) if (i+crop_size)<height else height
-		
+
 		k=0
 		while(k<width):
 			l = (k+crop_size) if (k+crop_size)<width else width
@@ -99,14 +99,14 @@ def fill_rgb_array(image,liste,crop_size):
 
 		i=j
 
-def rgb2hex(rgb):  
-	hexx= '#%02x%02x%02x' % (rgb[0], rgb[1], rgb[2])  
+def rgb2hex(rgb):
+	hexx= '#%02x%02x%02x' % (rgb[0], rgb[1], rgb[2])
 	return  int(colortable.rgb2short(hexx)[0])
 
 width, height = im.size
 
 #Array to hold average RGB values
-rgb_array = [ [[0,0,0]]*ceil(width/crop_size) for _ in range(ceil(height/crop_size))] 
+rgb_array = [ [[0,0,0]]*ceil(width/crop_size) for _ in range(ceil(height/crop_size))]
 
 fill_rgb_array(im,rgb_array,crop_size)
 
@@ -120,13 +120,3 @@ while(i<len(rgb_array)):
 		j+=1
 	print("")
 	i+=1
-
-
-
-
-
-
-
-
-
-
