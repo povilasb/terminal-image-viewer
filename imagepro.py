@@ -69,9 +69,14 @@ def average_rgb(array):
     while(i<len(array)):
         #print(array[i])
         n += array[i][0]
-        retval[0] += array[i][0] * array[i][1][0]
-        retval[1] += array[i][0] * array[i][1][1]
-        retval[2] += array[i][0] * array[i][1][2]
+        if im.mode == 'RGB':
+            retval[0] += array[i][0] * array[i][1][0]
+            retval[1] += array[i][0] * array[i][1][1]
+            retval[2] += array[i][0] * array[i][1][2]
+        else:
+            retval[0] += array[i][0] * array[i][1]
+            retval[1] += array[i][0] * array[i][1]
+            retval[2] += array[i][0] * array[i][1]
         i+=1
 
     retval[0]//=n
