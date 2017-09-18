@@ -4,6 +4,8 @@ terminal-image-viewer
 
 Simple python script to view images in terminal.
 
+.. image:: sample.gif
+
 Usage
 =====
 
